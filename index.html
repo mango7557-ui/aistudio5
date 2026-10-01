@@ -1,0 +1,934 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>김태현 마케팅 전문가</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+
+<style>
+/*
+  Layout: Full-width stacked sections, wide-gutter content container
+  Color: Deep navy-black bg / vivid coral-orange accent / warm amber secondary
+  Type: Noto Serif KR (display) + Noto Sans KR (body)
+*/
+:root {
+  --bg:       #080C16;
+  --surface:  #111827;
+  --surface2: #1A2236;
+  --accent:   #FF5733;
+  --accent2:  #FFB347;
+  --fg:       #EEE9E0;
+  --muted:    #7A8499;
+  --border:   rgba(255,255,255,0.07);
+  --gutter:   clamp(16px, 5vw, 80px);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg:       #F5F3EE;
+    --surface:  #FFFFFF;
+    --surface2: #EDE9E0;
+    --fg:       #0D1117;
+    --muted:    #5A6278;
+    --border:   rgba(0,0,0,0.08);
+  }
+}
+:root[data-theme="light"] {
+  --bg:       #F5F3EE;
+  --surface:  #FFFFFF;
+  --surface2: #EDE9E0;
+  --fg:       #0D1117;
+  --muted:    #5A6278;
+  --border:   rgba(0,0,0,0.08);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.7;
+  font-size: 16px;
+  padding-inline: 0;
+  overflow-x: hidden;
+}
+.container {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+h1, h2, h3 {
+  font-family: 'Noto Serif KR', serif;
+  text-wrap: balance;
+}
+img { max-width: 100%; display: block; }
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: env(safe-area-inset-top, 0px);
+  inset-inline: 0;
+  z-index: 100;
+  background: rgba(8,12,22,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.nav-logo {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--fg);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--accent); }
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--accent); }
+@media (max-width: 620px) { .nav-links { display: none; } }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100svh;
+  padding-top: calc(80px + env(safe-area-inset-top, 0px));
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+}
+@media (max-width: 700px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+.hero-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.hero-name {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--fg);
+  margin-bottom: 8px;
+}
+.hero-age {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.hero-tagline {
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  color: var(--fg);
+  opacity: 0.85;
+  line-height: 1.65;
+  max-width: 440px;
+  margin-bottom: 36px;
+  font-weight: 300;
+}
+.hero-cta {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background .2s, transform .15s;
+}
+.hero-cta:hover { background: #e04020; transform: translateY(-2px); }
+
+/* stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--accent);
+}
+.stat-card:nth-child(2)::before { background: var(--accent2); }
+.stat-card:nth-child(3)::before { background: #7B68EE; }
+.stat-card:nth-child(4)::before { background: #3DD68C; }
+.stat-num {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--fg);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 6px;
+}
+.stat-num .plus { color: var(--accent); }
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+/* bg deco */
+.hero-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+.hero-deco::before {
+  content: 'KFCEO';
+  position: absolute;
+  right: -2%;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(6rem, 18vw, 18rem);
+  font-weight: 700;
+  color: var(--border);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+/* ── SECTION BASE ── */
+section { padding-block: 96px; }
+.section-eyebrow {
+  font-size: 0.76rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--fg);
+  margin-bottom: 20px;
+}
+.section-rule {
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+  margin-bottom: 32px;
+}
+.section-body {
+  font-size: 1.05rem;
+  color: var(--fg);
+  opacity: 0.82;
+  line-height: 1.8;
+  max-width: 660px;
+}
+
+/* ── PERSONAL STORY ── */
+#about { background: var(--surface); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+@media (max-width: 700px) {
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+.about-photo {
+  background: var(--surface2);
+  border-radius: 4px;
+  aspect-ratio: 3/4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  position: relative;
+}
+.about-photo-inner {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.3;
+}
+.about-photo-label {
+  position: absolute;
+  bottom: 16px;
+  left: 0; right: 0;
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+.about-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  background: var(--surface2);
+  color: var(--fg);
+  border: 1px solid var(--border);
+}
+.badge.accent { background: var(--accent); color: #fff; border-color: transparent; }
+
+/* ── TIMELINE ── */
+#career { background: var(--bg); }
+.timeline { position: relative; padding-left: 24px; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+.tl-item {
+  position: relative;
+  padding: 0 0 36px 28px;
+}
+.tl-item:last-child { padding-bottom: 0; }
+.tl-dot {
+  position: absolute;
+  left: -7px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+}
+.tl-year {
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.tl-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--fg);
+  margin-bottom: 4px;
+}
+.tl-sub {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ── COMPANY ── */
+#company { background: var(--surface); }
+.company-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 48px;
+}
+@media (max-width: 700px) {
+  .company-grid { grid-template-columns: 1fr; }
+}
+.service-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 28px;
+  transition: border-color .2s, transform .2s;
+}
+.service-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+.service-icon {
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+}
+.service-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--fg);
+  margin-bottom: 8px;
+}
+.service-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ── SNS EDUCATION ── */
+#sns { background: var(--bg); }
+.sns-wrapper {
+  margin-top: 48px;
+  background: var(--surface);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: 40px;
+}
+.sns-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--fg);
+  margin-bottom: 8px;
+}
+.sns-sub {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
+}
+.platform-item {
+  background: var(--surface2);
+  border-radius: 6px;
+  padding: 20px 12px;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: transform .15s, border-color .2s;
+}
+.platform-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+.platform-logo {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+.platform-name {
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+/* ── SPEAKING ── */
+#speaking { background: var(--surface); }
+.book-card {
+  display: flex;
+  gap: 32px;
+  align-items: start;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 32px;
+  margin-bottom: 32px;
+}
+@media (max-width: 580px) { .book-card { flex-direction: column; gap: 20px; } }
+.book-cover {
+  flex-shrink: 0;
+  width: 90px;
+  aspect-ratio: 2/3;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  padding: 8px;
+  line-height: 1.4;
+}
+.book-info h3 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--fg);
+  margin-bottom: 6px;
+}
+.book-year {
+  font-size: 0.78rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.book-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.venues-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+.venue-tag {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  color: var(--fg);
+  opacity: 0.8;
+}
+
+/* ── CONTACT ── */
+#contact {
+  background: var(--bg);
+  text-align: center;
+  padding-block: 100px;
+}
+.contact-inner {
+  max-width: 560px;
+  margin-inline: auto;
+}
+#contact .section-title { font-size: clamp(1.6rem, 4vw, 2.4rem); }
+#contact .section-rule { margin-inline: auto; }
+.contact-desc {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 36px;
+  line-height: 1.8;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  text-align: left;
+}
+@media (max-width: 480px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px;
+}
+.contact-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.contact-val {
+  font-size: 0.95rem;
+  color: var(--fg);
+  font-weight: 500;
+}
+.contact-val a { color: var(--accent); text-decoration: none; }
+.contact-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color .2s, border-color .2s;
+}
+.contact-copy-btn:hover { color: var(--fg); border-color: var(--accent); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 24px var(--gutter);
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+footer strong { color: var(--accent); }
+
+/* ── ANIMATIONS ── */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">KIM<span>.</span>TAEHYEON</a>
+  <ul class="nav-links">
+    <li><a href="#about">소개</a></li>
+    <li><a href="#career">경력</a></li>
+    <li><a href="#company">회사</a></li>
+    <li><a href="#sns">SNS교육</a></li>
+    <li><a href="#speaking">강의·저서</a></li>
+    <li><a href="#contact">연락</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-deco" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <p class="hero-label">온라인 마케팅 전문가 · KFCEO</p>
+        <h1 class="hero-name">김태현</h1>
+        <p class="hero-age">42세 · 태신기획 대표</p>
+        <p class="hero-tagline">프랜차이즈와 창업, 디지털 마케팅의 교차점에서<br>브랜드의 성장을 설계합니다.</p>
+        <a class="hero-cta" href="#contact">연락하기</a>
+      </div>
+      <div class="stats-grid fade-up">
+        <div class="stat-card">
+          <div class="stat-num">1,000<span class="plus">+</span></div>
+          <div class="stat-label">기업·정부·학교 강의</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">2<span class="plus">개</span></div>
+          <div class="stat-label">법인 대표 동시 운영</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">9<span class="plus">년</span></div>
+          <div class="stat-label">온라인 마케팅 경력</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">8<span class="plus">개</span></div>
+          <div class="stat-label">SNS 플랫폼 교육 운영</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="about-photo" aria-label="김태현 프로필 사진">
+          <div class="about-photo-inner"></div>
+          <div class="about-photo-label">태신기획 대표</div>
+        </div>
+        <div class="about-badges">
+          <span class="badge accent">現 태신기획 대표</span>
+          <span class="badge">한국온라인마케팅협회 대표</span>
+          <span class="badge">마케팅 강사</span>
+          <span class="badge">프랜차이즈 전문가</span>
+        </div>
+      </div>
+      <div class="fade-up">
+        <p class="section-eyebrow">Personal Story</p>
+        <h2 class="section-title">소개</h2>
+        <div class="section-rule"></div>
+        <p class="section-body">
+          블로그·SNS 마케팅부터 프랜차이즈 DB 수집, 콘텐츠 제작·배포까지 온라인 마케팅 전반을 아우르는 실무 전문가입니다. 2017년 한국온라인마케팅협회를 직접 설립해 교육 분야를 개척했고, 2018년에는 광고대행사 마케팅타워를 창업했습니다.
+        </p>
+        <br>
+        <p class="section-body">
+          대기업·정부기관·학교에서 누적 1,000회 이상의 강의를 진행했으며, 프랜차이즈 마케팅 분야 논문을 발표한 바 있습니다. 현재는 태신기획 대표로서 네이버카페와 유튜브 채널을 통해 창업·마케팅 커뮤니티를 운영 중입니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section id="career">
+  <div class="container">
+    <p class="section-eyebrow">Career</p>
+    <h2 class="section-title">경력 타임라인</h2>
+    <div class="section-rule"></div>
+    <div class="timeline fade-up">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">現재</div>
+        <div class="tl-title">태신기획 대표</div>
+        <div class="tl-sub">온라인 마케팅 에이전시 운영 · 프랜차이즈 창업 마케팅 전문</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">現재</div>
+        <div class="tl-title">한국온라인마케팅협회 대표</div>
+        <div class="tl-sub">SNS·디지털 마케팅 교육 협회 운영</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2020</div>
+        <div class="tl-title">저서 출간 — 뉴노멀시대 CEO 12인을 만나다</div>
+        <div class="tl-sub">코로나 시대 리더십과 경영 인사이트 공저</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2018</div>
+        <div class="tl-title">마케팅타워 설립</div>
+        <div class="tl-sub">광고대행 전문 법인 창업</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2017</div>
+        <div class="tl-title">한국온라인마케팅협회 설립</div>
+        <div class="tl-sub">디지털 마케팅 교육 특화 협회 창립</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">연속</div>
+        <div class="tl-title">1,000회 이상 강의</div>
+        <div class="tl-sub">대기업 · 정부기관 · 학교 · 공공기관 출강</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY -->
+<section id="company">
+  <div class="container">
+    <p class="section-eyebrow">Company Story</p>
+    <h2 class="section-title">태신기획</h2>
+    <div class="section-rule"></div>
+    <p class="section-body">
+      태신기획은 블로그 상위노출·리뷰 마케팅, 인스타그램 인기 게시글 운영, 카페 겸투 마케팅, 콘텐츠 제작·배포, 프랜차이즈 DB 수집 등 온라인 마케팅 전반을 커버하는 통합 마케팅 에이전시입니다. 프랜차이즈·창업·마케팅 관련 네이버카페와 유튜브 채널을 직접 운영하며 브랜드 성장을 지원합니다.
+    </p>
+    <div class="company-grid fade-up">
+      <div class="service-card">
+        <div class="service-icon">📝</div>
+        <div class="service-title">블로그 상위노출 · 리뷰</div>
+        <div class="service-desc">네이버 블로그 최적화 전략으로 검색 상위 노출을 달성하고 브랜드 신뢰도를 높입니다.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📸</div>
+        <div class="service-title">인스타그램 인기 게시글</div>
+        <div class="service-desc">타겟 오디언스에 최적화된 콘텐츠로 인스타그램 알고리즘을 공략합니다.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏪</div>
+        <div class="service-title">프랜차이즈 DB 수집</div>
+        <div class="service-desc">프랜차이즈 창업 희망자 데이터베이스를 체계적으로 수집·관리하여 가맹 영업을 지원합니다.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎬</div>
+        <div class="service-title">콘텐츠 제작 · 배포</div>
+        <div class="service-desc">유튜브, 카페, SNS 등 다채널에 걸친 콘텐츠 전략을 수립하고 실행합니다.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">☕</div>
+        <div class="service-title">카페 겸투 마케팅</div>
+        <div class="service-desc">네이버 카페를 활용한 커뮤니티 마케팅으로 브랜드 팬덤을 구축합니다.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚀</div>
+        <div class="service-title">창업 · 프랜차이즈 컨설팅</div>
+        <div class="service-desc">온라인 마케팅 관점에서 창업과 프랜차이즈 론칭을 전략적으로 지원합니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SNS -->
+<section id="sns">
+  <div class="container">
+    <p class="section-eyebrow">SNS Marketing Education</p>
+    <h2 class="section-title">SNS 마케팅 교육</h2>
+    <div class="section-rule"></div>
+    <div class="sns-wrapper fade-up">
+      <div class="sns-title">SNS마케팅교육</div>
+      <div class="sns-sub">플랫폼별 특성에 맞는 실전 마케팅 전략을 교육합니다</div>
+      <div class="platform-grid">
+        <div class="platform-item">
+          <div class="platform-logo">🟢</div>
+          <div class="platform-name">NAVER</div>
+        </div>
+        <div class="platform-item">
+          <div class="platform-logo">✏️</div>
+          <div class="platform-name">Blog</div>
+        </div>
+        <div class="platform-item">
+          <div class="platform-logo">💬</div>
+          <div class="platform-name">KakaoTalk</div>
+        </div>
+        <div class="platform-item">
+          <div class="platform-logo">🔵</div>
+          <div class="platform-name">Facebook</div>
+        </div>
+        <div class="platform-item">
+          <div class="platform-logo">📷</div>
+          <div class="platform-name">Instagram</div>
+        </div>
+        <div class="platform-item">
+          <div class="platform-logo">▶️</div>
+          <div class="platform-name">YouTube</div>
+        </div>
+        <div class="platform-item">
+          <div class="platform-logo">🎵</div>
+          <div class="platform-name">TikTok</div>
+        </div>
+        <div class="platform-item">
+          <div class="platform-logo">🟩</div>
+          <div class="platform-name">LINE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKING -->
+<section id="speaking">
+  <div class="container">
+    <p class="section-eyebrow">Speaking & Publications</p>
+    <h2 class="section-title">강의 · 저서</h2>
+    <div class="section-rule"></div>
+    <div class="book-card fade-up">
+      <div class="book-cover">뉴노멀시대<br>CEO<br>12인을<br>만나다</div>
+      <div class="book-info">
+        <div class="book-year">2020</div>
+        <h3>뉴노멀시대 CEO 12인을 만나다</h3>
+        <p class="book-desc">코로나 팬데믹이라는 뉴노멀 시대를 맞아 각 분야 CEO 12인의 경영 철학과 위기 극복 스토리를 담은 공저. 경력 10년, 1,000회 이상의 강의 전략과 현장 인사이트를 수록했습니다.</p>
+      </div>
+    </div>
+    <h3 style="font-family:'Noto Serif KR',serif; font-size:1rem; color:var(--fg); margin-bottom:16px;">주요 강의 기관</h3>
+    <div class="venues-list fade-up">
+      <span class="venue-tag">뉴노멀시대 CEO 12인</span>
+      <span class="venue-tag">서울특별시 노들섬지식소통소통 교육</span>
+      <span class="venue-tag">중소기업기술혁신협회</span>
+      <span class="venue-tag">인천창조경제혁신센터</span>
+      <span class="venue-tag">경남창조경제혁신센터</span>
+      <span class="venue-tag">대구창조경제혁신센터</span>
+      <span class="venue-tag">곡성농업기술센터</span>
+      <span class="venue-tag">대구콘텐츠코리아랩</span>
+      <span class="venue-tag">광기도개발과학진흥원</span>
+      <span class="venue-tag">서울농수산물공사</span>
+      <span class="venue-tag">경대</span>
+      <span class="venue-tag">공주대</span>
+      <span class="venue-tag">한국기술교육대</span>
+      <span class="venue-tag">배석대</span>
+      <span class="venue-tag">한국온라인마케팅협회</span>
+      <span class="venue-tag">카페24</span>
+      <span class="venue-tag">롯데미래채용</span>
+      <span class="venue-tag">현대백화점</span>
+      <span class="venue-tag">한국수출입은행</span>
+      <span class="venue-tag">카페베네</span>
+      <span class="venue-tag">금블별아카데미</span>
+      <span class="venue-tag">다이어트스쿨</span>
+      <span class="venue-tag">한국직업개발원</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <p class="section-eyebrow" style="text-align:center;">Contact</p>
+      <h2 class="section-title">함께 성장합시다</h2>
+      <div class="section-rule"></div>
+      <p class="contact-desc">강의 의뢰, 마케팅 컨설팅, 프랜차이즈 마케팅 협업 등 다양한 문의를 환영합니다.</p>
+      <div class="contact-grid fade-up">
+        <div class="contact-item">
+          <div class="contact-label">회사</div>
+          <div class="contact-val">태신기획</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">협회</div>
+          <div class="contact-val">한국온라인마케팅협회</div>
+        </div>
+        <div class="contact-item" style="grid-column:1/-1;">
+          <div class="contact-label">유튜브 · 네이버카페</div>
+          <div class="contact-val">프랜차이즈·창업·마케팅 커뮤니티 운영 중</div>
+          <button class="contact-copy-btn" onclick="copyText('태신기획')">📋 복사</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2024 <strong>김태현</strong> · 태신기획 · 한국온라인마케팅협회</p>
+</footer>
+
+<script>
+// Intersection Observer fade-up
+const fadeEls = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.12 });
+fadeEls.forEach(el => observer.observe(el));
+
+// Copy helper
+function copyText(text) {
+  navigator.clipboard.writeText(text).catch(() => {});
+}
+
+// Smooth stat counter animation
+function animateCount(el, target, suffix) {
+  let start = 0;
+  const duration = 1400;
+  const step = timestamp => {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / duration, 1);
+    const val = Math.floor(progress * target);
+    el.querySelector('.num-val').textContent = val.toLocaleString('ko-KR');
+    if (progress < 1) requestAnimationFrame(step);
+    else el.querySelector('.num-val').textContent = target.toLocaleString('ko-KR');
+  };
+  requestAnimationFrame(step);
+}
+
+// Observe stat cards
+const statObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      // already rendered as text, just leave them
+      statObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-card').forEach(c => statObs.observe(c));
+</script>
+
+</body></html>
